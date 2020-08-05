@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态表格案例</title>
+    <style>
+        table{
+            border: 1px solid yellow;
+            margin: auto;
+            width: 500px;
+        }
+
+        td,th{
+            text-align: center;
+            border: 1px solid;
+        }
+        div{
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div>
+    <input type="text" id="id" value="" placeholder="请输入编号">
+    <input type="text" id="name" value=""  placeholder="请输入姓名">
+    <input type="text" id="gender" value=""  placeholder="请输入性别">
+    <input type="button" value="添加" onclick="add()">
+
+</div>
+<table id="table">
+    <caption>学生信息表</caption>
+    <tr>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>操作</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>张三</td>
+        <td>男</td>
+        <td><a href="javascript:void(0)" onclick="del(this)">删除</a></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>李四</td>
+        <td>男</td>
+        <td><a href="javascript:void(0)" onclick="del(this)">删除</a></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>王五</td>
+        <td>女</td>
+        <td><a href="javascript:void(0)" onclick="del(this)">删除</a></td>
+    </tr>
+</table>
+</body>
+<script>
+    var table = document.getElementById("table");
+
+    //按钮点击事件
+    function add() {
+        //获取各个元素的值
+        var id = document.getElementById("id").value;
+        var name = document.getElementById("name").value;
+        var gender = document.getElementById("gender").value;
+
+
+        //分别创建文本结点
+        var nodeId = document.createTextNode(id);
+        var nodeName = document.createTextNode(name);
+        var nodeGender = document.createTextNode(gender);
+
+
+        //包装到td中，然后包装到tr中
+        var td1 = document.createElement("td");
+        var td2 = document.createElement("td");
+        var td3 = document.createElement("td");
+        var td4 = document.createElement("td");
+
+        td1.appendChild(nodeId);
+        td2.appendChild(nodeName);
+        td3.appendChild(nodeGender);
+        td4.innerHTML = "<a href=\"javascript:void(0)\" onclick=\"del(this)\">删除</a>";
+
+
+        var tr = document.createElement("tr");
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        tr.appendChild(td4);
+
+        //将tr包装到table中
+        table.appendChild(tr);
+
+    }
+
+    //删除 table.removeChild(tr);
+    function del(obj) {
+        var tr=obj.parentNode.parentNode;
+        var table=obj.parentNode.parentNode.parentNode;
+        table.removeChild(tr);
+    }
+
+</script>
+</html>

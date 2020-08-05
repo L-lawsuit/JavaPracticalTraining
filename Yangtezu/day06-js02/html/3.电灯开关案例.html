@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>电灯开关案例</title>
+</head>
+<body>
+<div style="text-align: center;">
+    <img id="light" src="../img/off.gif" alt="电灯加载出错">
+</div>
+
+
+</body>
+<script>
+    var id = document.getElementById("light");
+    var flag = 0;   //0代表灭，1代表亮
+    id.onclick = function () {
+        if (flag){
+            id.src = "../img/off.gif";
+            flag = 0;
+        } else {
+            id.src = "../img/on.gif";
+            flag = 1;
+        }
+    }
+    
+</script>
+</html>

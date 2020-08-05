@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>99乘法表</title>
+</head>
+<body>
+
+</body>
+<script>
+    function item(i,j) {
+        document.write(i + "&nbsp;" + "X" + "&nbsp;" + j + "&nbsp;" + "=" + "&nbsp;" + i*j);
+    }
+    function multiple() {
+        for (var i = 0; i < 9; i++){
+            for (var j = 0; j <= i; j++){
+                item(i+1,j+1);//输出每一项乘式
+                //乘式间的间距
+                if (j !== i){
+                    //代表两个\t
+                    document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+                }
+                //校正第3行2列和第4行2列出现的项不对齐的情况
+                if ( (i === 2 && j === 1) || (i === 3 && j === 1)){
+                    document.write("&nbsp;&nbsp")
+                }
+            }
+            //每一行的换行处理
+            document.write("<br>");
+        }
+    }
+    //调用
+    multiple();
+</script>
+</html>

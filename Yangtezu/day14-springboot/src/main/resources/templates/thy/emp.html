@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table border="1px" cellspacing="0" cellpadding="20px" align="center" style="text-align: center; background: antiquewhite;">
+    <tr>
+        <td>编号</td>
+        <td>姓名</td>
+        <td>年龄</td>
+        <td>性别</td>
+        <td>薪水</td>
+        <td>部门编号</td>
+    </tr>
+    <tr th:each="emp:${emps}">
+        <td th:text="${emp.getId()}"></td>
+        <td th:text="${emp.getName()}"></td>
+        <td th:text="${emp.getAge()}"></td>
+        <td th:text="${emp.getSex()}"></td>
+        <td th:text="${emp.getSalary()}"></td>
+        <td th:text="${emp.getDept_id()}"></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js函数实参数组</title>
+</head>
+<body>
+
+</body>
+<script>
+    function add() {
+        var sum = 0;
+        for (var i = 0; i < arguments.length; i++){
+            sum += arguments[i];
+            document.write(arguments[i]);
+            if (i < arguments.length - 1){
+                document.write("、");
+            } else {
+                document.write("的和为：");
+            }
+        }
+        document.write(sum + "<br>");
+    }
+    add(5,2,5);
+    add(1,2,3,4,5);
+    add(2,3);
+
+</script>
+</html>

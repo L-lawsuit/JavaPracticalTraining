@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性选择器</title>
+
+    <style type="text/css">
+        span[a="a"]{
+            color: blue;
+        }
+        span[b="b"]{
+            color: red;
+        }
+        span[c="c"][e="e"]{
+            color: yellow;
+        }
+        span[d="d"]{
+            color: gray;
+        }
+
+    </style>
+</head>
+<body>
+    <h3>属性选择器</h3>
+    <p>
+        <span a="a">张三</span>
+        <span b="b">李四</span>
+        <span c="c" e="e">小明</span>
+        <span d="d">小红</span>
+
+
+
+    </p>
+</body>
+</html>

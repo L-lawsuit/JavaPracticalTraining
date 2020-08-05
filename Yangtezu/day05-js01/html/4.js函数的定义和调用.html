@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js函数的定义和调用</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*1、普通的方式*/
+    function print1(e) {
+        document.write(e + "<br>");
+    }
+    //调用
+    print1("1、普通的方式");
+
+    /*2、匿名函数*/
+    var print2 = function (e) {
+        document.write(e + "<br>");
+    };
+    print2("2、匿名函数形式");
+
+    /*3、动态函数*/
+    var print3 = new Function ("e","document.write(e + \"<br>\");\n");
+    print3("3、动态函数形式")
+</script>
+</html>

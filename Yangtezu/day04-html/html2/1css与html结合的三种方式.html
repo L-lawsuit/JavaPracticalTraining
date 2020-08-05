@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css与html结合的三种方式</title>
+
+    <link rel="stylesheet" href="./外部引入css.css">
+    <!--2、写在head标签中-->
+    <style type="text/css">
+        #two {
+            width: 200px;
+            height: 200px;
+            border: 10px dashed black;
+        }
+    </style>
+</head>
+<body>
+
+    <h4>1、内联式--css属性写在集成属性style中--特点：只能作用当前元素</h4>
+    <div style="width: 200px;height: 200px;border: 10px dashed blue;">
+        盒子，容器，包含其它元素。特点：没有任何属性，洁白无瑕，白纸才好画画。
+    </div>
+    <br>
+    <div id="two">
+        写在head标签中的css方式
+    </div>
+    <br>
+    <div id="three">
+        外部引入的方式
+
+    </div>
+</body>
+</html>

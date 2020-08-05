@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>开关窗口案例</title>
+</head>
+<body>
+<input type="button" id="o" value="打开">
+<input type="button" id="c" value="关闭">
+</body>
+<script>
+    var newWindow = null;
+
+    var o = document.getElementById("o");
+    o.onclick = function () {
+        newWindow = open("https://www.baidu.com");
+    }
+
+    var c = document.getElementById("c");
+    c.onclick = function () {
+        newWindow.close();
+    }
+
+
+
+
+</script>
+</html>

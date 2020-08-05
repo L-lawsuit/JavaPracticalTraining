@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js Array对象</title>
+</head>
+<body>
+    <h3>请查看控制台</h3>
+    <h3>
+        <dl>
+            <dt>数组对象创建方式：</dt>
+            <dd>var array1 = new Array(3);</dd>
+            <dd>var array2 = ["js",222,true];</dd>
+            <dd>var array3 = new Array("World",23,true,false,"lalala");</dd>
+        </dl>
+    </h3>
+</body>
+<script>
+    /*3种定义方式*/
+    var array1 = new Array(3);
+    array1[0] = "Hello";
+    array1[1] = 4;
+    array1[2] = true;
+    array1[3] = false;
+    console.log("array1：");
+    console.log(array1);
+
+    var array2 = ["js",222,true];
+    console.log("array2：");
+    console.log(array2);
+
+    var array3 = new Array("World",23,true,false,"lalala");
+    console.log("array3：");
+    console.log(array3);
+</script>
+</html>

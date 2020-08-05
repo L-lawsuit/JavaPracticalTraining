@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹框案例</title>
+</head>
+<body>
+<input type="button" id="resign" value="退出" onclick="f1()">
+<p id="p1"></p>
+</body>
+<script>
+    function f1() {
+        var b = confirm("你确定要退出吗？");
+        if (b){
+            var s = prompt("请留下您宝贵的意见。","");
+
+            while (s == null || s === ""){
+                s =prompt("请留下您宝贵的意见。","");
+            }
+            document.getElementById("p1").innerText = s;
+            console.log(s);
+
+        } else {
+            alert("感谢您留下来。");
+        }
+
+    }
+
+</script>
+</html>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="day17-eshop02" />
+        <module name="day13-boot" />
+        <module name="day14-springboot" />
+        <module name="day16-eshop01" />
+        <module name="day18-eshop03" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="day13-boot" target="1.8" />
+      <module name="day14-springboot" target="1.8" />
+      <module name="day15" target="1.8" />
+      <module name="day15-Hello_Maven" target="1.8" />
+      <module name="day16-eshop01" target="1.8" />
+      <module name="day17-eshop02" target="1.8" />
+      <module name="day18-eshop03" target="1.8" />
+      <module name="test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="day15" options="-parameters" />
+      <module name="day16-eshop01" options="-parameters" />
+      <module name="day17-eshop02" options="-parameters" />
+      <module name="day18-eshop03" options="-parameters" />
+    </option>
+  </component>
+</project>

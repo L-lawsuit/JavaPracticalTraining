@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三种弹窗方法</title>
+</head>
+<body>
+
+<input type="button" id="con" value="第二种confirm弹框">
+<p id="p2"></p>
+<p id="p3"></p>
+
+</body>
+<script>
+    //alert弹框
+    alert("第一种alert弹框");
+
+    //confirm弹框
+    var c = document.getElementById("con");
+    c.onclick = function () {
+        var b = confirm("Hello，confirm弹框！");
+        document.getElementById("p2").innerText = "confirm弹框返回值：" + b;
+    }
+
+    //prompt弹框
+    var s = prompt("你要删库跑路吗？","OK");
+    document.getElementById("p3").innerText = "prompt弹框返回值：" + s;
+
+
+
+
+</script>
+</html>

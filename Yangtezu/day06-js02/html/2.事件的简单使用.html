@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件的简单使用</title>
+</head>
+<body>
+    <div id="div" style="color: red; border: 1px solid black; width: fit-content;">
+        Hello，事件的使用！
+    </div>
+
+</body>
+<script>
+    var div = document.getElementById("div");
+    div.onmouseover = function () {
+        this.style.color = "blue";
+    }
+    div.onmouseout = function () {
+        this.style.color = "red";
+    }
+</script>
+</html>

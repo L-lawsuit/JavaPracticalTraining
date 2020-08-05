@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>location案例</title>
+</head>
+<body>
+
+    <p style="text-align: center">
+        <span id="second">5</span>
+        秒之后自动跳转首页......
+    </p>
+
+</body>
+<script>
+    var s = document.getElementById("second");
+    var second = 5;
+    function f1(){
+        second--;
+        s.innerText = second;
+        if (second <= 0){
+            //清楚定时器，并跳转
+            clearInterval(interval);
+            location.href = "https://www.baidu.com";
+
+        }
+    }
+    var interval = setInterval(f1,1000);
+
+</script>
+</html>
