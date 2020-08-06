@@ -1,0 +1,82 @@
+
+<!DOCTYPE>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="icon" type="image/x-icon" href="/img/title-icon.jpg"/>
+		<title>爱购登录页面</title>
+		<link rel="stylesheet" href="/css/reset.css" />
+		<link rel="stylesheet" href="/css/footer.css" />
+		<link rel="stylesheet" href="/css/login.css" />
+	</head>
+	<body>
+		<!--登录/注册的头部-->
+		<div class="lr-top w1230">
+			<a href="index.html"><img src="/img/logo.png" width="150px" height="60px"/></a>
+			<div class="top-link">
+				<a href="javascript:;;" class="top-link1"></a>
+				<a href="javascript:;;" class="top-link2"></a>
+				<a href="javascript:;;" class="top-link3"></a>
+			</div>
+		</div>
+		<!--登录/注册的中部-->
+		<div class="lr-main">
+			<div class="w1230">
+				<div class="reg-div">
+					<h3 class="login-title">登录爱购</h3>
+					<p class="go-reg">还没有爱购账号？<a href="/front/register/registerPage">在此注册</a></p>
+					<form action="#" method="post">
+						<p><span class="icon-account"></span><input type="text" name="username" placeholder="请输入已注册的账号"/></p>
+						<p><span class="icon-pwd"></span><input type="password" name="password" placeholder="请输入密码"/></p>
+						<p class="clear-float"><input type="text" name="code" placeholder="验证码" class="code"/>
+							<img src="/common/code" width="110px" height="42px" class="code-img"/></p>
+						<p><input type="checkbox" name="autoLogin" value="1" class="chk-login"/><span>7天免登录</span></p>
+						<input type="submit" value="登录" class="sum-btn" />
+					</form>
+				</div>
+			</div>	
+		</div>
+		<!--登录/注册的底部-->
+		<div class="lr-footer footer">
+			<p class="w1230">
+				<a href="javascript:;;">关于爱购</a>
+				<a href="javascript:;;">合作伙伴</a>
+				<a href="javascript:;;">营销中心</a>
+				<a href="javascript:;;">廉正举报</a>
+				<a href="javascript:;;">联系客服</a>
+				<a href="javascript:;;">开发平台</a>
+				<a href="javascript:;;">诚征英才</a>
+				<a href="javascript:;;">联系我们</a>
+				<a href="javascript:;;">网站地图</a>
+				<a href="javascript:;;">知识产权</a><span>|</span>
+				<span>&copy;2018-2020 igo.com 版权所有</span>
+			</p>
+		</div>
+		<input type="hidden" class="to_index" value="/front/index">
+		<script src="/plugs/jquery.js"></script>
+		<script>
+			$(function (){
+				//验证码点击事件，点击更换验证码图片
+				$('.code-img').on('click', function (){
+					//改变img标签的src属性，末尾加一个随机数，
+					//浏览器发现请求没有变化，不会向服务器发送请求，所有如果src属性一直不变，无法实现更换图片
+					$('.code-img').attr("src", "/common/code?" + Math.random());
+
+				})
+				
+				//登录事件
+				$('form').on('submit', function (){
+					var data = $(this).serialize();//获取整个表单的所有参数
+					$.post('/front/login/login', data,  function(msg){
+						alert(msg);
+						if(msg=="登录成功"){
+							//页面跳转，前台首页
+							window.location.href = $('.to_index').val();
+						}
+					})
+					return false;
+				})
+			})
+		</script>
+	</body>
+</html>
